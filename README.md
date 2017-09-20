@@ -45,7 +45,7 @@ This can be used with all other files too.
 Just change url and file name accordingly.
 
 
-Imported **quiz data** needs some mungigng:
+Imported **quiz data** needs some munging:
 ```
 colnames(quiz) <- c("time","education", "supervision", "stats_course",
                     "analysed_data", "proficiency", "junk", "plan_before",
