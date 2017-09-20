@@ -14,7 +14,7 @@ Find button "Raw" and click on it, you will see raw text.
 Copy url from browser.
 
 **Download file**. 
-First, we create folder called "data". 
+First, we create folder called "data" to host all necessary data files. 
 
 ```
 dir.create("data")
@@ -22,7 +22,7 @@ dir.create("data")
 
 Function will issue a warning when dir already exists.
 
-First download file into data directory:
+First download file into "data" directory:
 ``` 
 url <- "https://raw.githubusercontent.com/rstats-tartu/datasets/master/quiz.csv"
 download.file(url, "data/quiz.csv")
