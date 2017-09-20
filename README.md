@@ -32,14 +32,18 @@ Read file:
 ```
 library(readr)
 library(dplyr)
+
 quiz <- read_csv("data/quiz.csv")
 quiz
+
 colnames(quiz) <- c("time","education", "supervision", "stats_course",
                     "analysed_data", "proficiency", "junk", "plan_before",
                     "decide_after","publication_bias","publish_all",
                     "collect_more","different_method")
+
 ## Let's fix education to numeric
 quiz <- mutate_at(quiz, "education", parse_number)
+
 ## Remove one non-question
 quiz <- select(quiz, -junk)
 quiz
