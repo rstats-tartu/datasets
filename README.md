@@ -2,10 +2,16 @@
 
 This repo contains datasets that we use in our demos.
 
-
-
 ## Downloading files from datasets repository
-We had problem with reading quiz.csv file directly from its GitHub url. Here's the workaround: first download this file and then import to R, see below.
+We had problem with reading quiz.csv file directly from its GitHub url:
+
+```
+library(readr)
+url <- "https://raw.githubusercontent.com/rstats-tartu/datasets/master/quiz.csv"
+quiz <– read_csv(url)
+```
+For some people using `read_csv()` directly with url gave an error.
+Here's simple workaround: first download this quiz.csv file and then import to R, see below. 
 
 **Get file url**.
 Click on the file name you want to download. 
@@ -24,7 +30,6 @@ Function will issue a warning when dir already exists.
 
 First download file into "data" directory:
 ``` 
-url <- "https://raw.githubusercontent.com/rstats-tartu/datasets/master/quiz.csv"
 download.file(url, "data/quiz.csv")
 ```
 
@@ -35,7 +40,13 @@ library(dplyr)
 
 quiz <- read_csv("data/quiz.csv")
 quiz
+```
+This can be used with all other files too. 
+Just change url and file name accordingly.
 
+
+Imported **quiz data** needs some mungigng:
+```
 colnames(quiz) <- c("time","education", "supervision", "stats_course",
                     "analysed_data", "proficiency", "junk", "plan_before",
                     "decide_after","publication_bias","publish_all",
