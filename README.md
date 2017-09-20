@@ -13,7 +13,7 @@ You need to see raw contents of the file.
 Find button "Raw" and click on it, you will see raw text.
 Copy url from browser.
 
-**Download file**
+**Download file**. 
 First, we create folder called "data". 
 
 ```
