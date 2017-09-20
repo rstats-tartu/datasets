@@ -40,6 +40,9 @@ colnames(quiz) <- c("time","education", "supervision", "stats_course",
                     "collect_more","different_method")
 ## Let's fix education to numeric
 quiz <- mutate_at(quiz, "education", parse_number)
+## Remove one non-question
+quiz <- select(quiz, -junk)
+quiz
 ```
 
 
