@@ -62,6 +62,12 @@ quiz
 
 **Download and import json file**:
 
+Cancer datasets from Estinian Health Statistics database:
+
+- "cancer_newcases_PK10.json", PK10: New cases of malignant neoplasms by specified site, sex and age group.
+
+- "cancer_incidence_PK30.json", PK30: Age-specific incidence rate of malignant neoplasms per 100 000 inhabitants by site and sex.
+
 Download "cancer_newcases_PK10.json" file from this GitHub repo ("rstats-tartu/datasets") similarly as shown above:
 ```
 url <- "https://raw.githubusercontent.com/rstats-tartu/datasets/master/cancer_newcases_PK10.json"
