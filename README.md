@@ -62,18 +62,18 @@ quiz
 
 **Download and import json file**:
 
-Download "cancer_incidence_PK30.json" file from this GitHub repo ("rstats-tartu/datasets") similarly as shown above:
+Download "cancer_newcases_PK10.json" file from this GitHub repo ("rstats-tartu/datasets") similarly as shown above:
 ```
-url <- "https://raw.githubusercontent.com/rstats-tartu/datasets/master/cancer_incidence_PK30.json"
+url <- "https://raw.githubusercontent.com/rstats-tartu/datasets/master/cancer_newcases_PK10.json"
 dir.create("data")
-download.file(url, "data/cancer_incidence_PK30.json")
+download.file(url, "data/cancer_newcases_PK10.json")
 ```
 
 To import this downloaded file into R you can use "boulder" package function `json_to_df()`:
 ```
 # devtools::install_github("tpall/boulder")
 library(boulder)
-path <- "data/cancer_incidence_PK30.json"
+path <- "data/cancer_newcases_PK10.json"
 incidence <- json_to_df(path)
 incidence
 ```
