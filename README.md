@@ -68,14 +68,14 @@ Cancer datasets from Estinian Health Statistics database:
 
 - "cancer_incidence_PK30.json", PK30: Age-specific incidence rate of malignant neoplasms per 100 000 inhabitants by site and sex.
 
-Download "cancer_newcases_PK10.json" file from this GitHub repo ("rstats-tartu/datasets") similarly as shown above:
+**Download** "cancer_newcases_PK10.json" file from this GitHub repo ("rstats-tartu/datasets") similarly as shown above:
 ```
 url <- "https://raw.githubusercontent.com/rstats-tartu/datasets/master/cancer_newcases_PK10.json"
 dir.create("data")
 download.file(url, "data/cancer_newcases_PK10.json")
 ```
 
-To import this downloaded file into R you can use "boulder" package function `json_to_df()`:
+**To import** this downloaded file into R you can use "boulder" package function `json_to_df()`:
 ```
 # devtools::install_github("tpall/boulder")
 library(boulder)
