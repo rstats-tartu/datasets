@@ -62,7 +62,7 @@ quiz
 
 **Download and import json file**:
 
-Cancer datasets from Estinian Health Statistics database:
+Cancer datasets from [Estonian Health Statistics database](http://pxweb.tai.ee/PXWeb2015/index_en.html):
 
 - "cancer_newcases_PK10.json", PK10: New cases of malignant neoplasms by specified site, sex and age group.
 
@@ -86,17 +86,37 @@ incidence
 
 ## Average monthly wage with additional payments
 
-healthcare_personnel_salary.tsv contains data about "average monthly wage with additional payments" of full- and part-time health care personnel for different occupations from all age groups [Estonian Health Statistics database](http://pxweb.tai.ee/PXWeb2015/pxweb/en/04THressursid/04THressursid__06THTootajatePalk/TT09.px/table/tableViewLayout2/?rxid=466b62f2-f258-4e9a-9590-4a4ac41c7513). Values are in euros.
+**healthcare_personnel_salary.tsv** contains data about "average monthly wage with additional payments" of full- and part-time health care personnel for different occupations from all age groups [Estonian Health Statistics database](http://pxweb.tai.ee/PXWeb2015/pxweb/en/04THressursid/04THressursid__06THTootajatePalk/TT09.px/table/tableViewLayout2/?rxid=466b62f2-f258-4e9a-9590-4a4ac41c7513). Values are in euros.
 
 
-Download this file
+**Download this file**:
 ```
 url <- "https://raw.githubusercontent.com/rstats-tartu/datasets/master/healthcare_personnel_salary.tsv"
 dir.create("data")
 download.file(url, "data/healthcare_personnel_salary.tsv")
 ```
-
+**Import this file**:
 ```
 library(readr)
-salary <- read_tsv("healthcare_personnel_salary.tsv")
+salary <- read_tsv("data/healthcare_personnel_salary.tsv")
 ```
+
+## Mean annual population
+
+**mean_annual_population.csv**: PO0211 MEAN ANNUAL POPULATION by Sex, Year and Age group dataset is from [Statistics Estonia database](http://pub.stat.ee/px-web.2001/Dialog/varval.asp?ma=PO0211&ti=MEAN+ANNUAL+POPULATION+BY+SEX+AND+AGE+GROUP&path=../I_Databas/Population/01Population_indicators_and_composition/04Population_figure_and_composition/&lang=1)
+Mean annual population – half the sum number of the population at the beginning and at the end of the year.
+
+**Download this file**:
+```
+url <- "https://raw.githubusercontent.com/rstats-tartu/datasets/master/mean_annual_population.csv"
+dir.create("data")
+download.file(url, "data/mean_annual_population.csv")
+```
+**Import this file**:
+```
+library(readr)
+pop <- read_csv("data/mean_annual_population.csv")
+```
+
+
+
