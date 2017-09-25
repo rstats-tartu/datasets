@@ -77,3 +77,20 @@ path <- "data/cancer_incidence_PK30.json"
 incidence <- json_to_df(path)
 incidence
 ```
+
+## Average monthly wage with additional payments
+
+healthcare_personnel_salary.tsv contains data about "average monthly wage with additional payments" of full- and part-time health care personnel for different occupations from all age groups [Estonian Health Statistics database](http://pxweb.tai.ee/PXWeb2015/pxweb/en/04THressursid/04THressursid__06THTootajatePalk/TT09.px/table/tableViewLayout2/?rxid=466b62f2-f258-4e9a-9590-4a4ac41c7513).
+
+
+Download this file
+```
+url <- "https://raw.githubusercontent.com/rstats-tartu/datasets/master/healthcare_personnel_salary.tsv"
+dir.create("data")
+download.file(url, "data/healthcare_personnel_salary.tsv")
+```
+
+```
+library(readr)
+salary <- read_tsv("healthcare_personnel_salary.tsv")
+```
