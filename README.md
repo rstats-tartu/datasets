@@ -86,7 +86,7 @@ incidence
 
 ## Average monthly wage with additional payments
 
-healthcare_personnel_salary.tsv contains data about "average monthly wage with additional payments" of full- and part-time health care personnel for different occupations from all age groups [Estonian Health Statistics database](http://pxweb.tai.ee/PXWeb2015/pxweb/en/04THressursid/04THressursid__06THTootajatePalk/TT09.px/table/tableViewLayout2/?rxid=466b62f2-f258-4e9a-9590-4a4ac41c7513).
+healthcare_personnel_salary.tsv contains data about "average monthly wage with additional payments" of full- and part-time health care personnel for different occupations from all age groups [Estonian Health Statistics database](http://pxweb.tai.ee/PXWeb2015/pxweb/en/04THressursid/04THressursid__06THTootajatePalk/TT09.px/table/tableViewLayout2/?rxid=466b62f2-f258-4e9a-9590-4a4ac41c7513). Values are in euros.
 
 
 Download this file
