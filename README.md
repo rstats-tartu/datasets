@@ -103,8 +103,9 @@ salary <- read_tsv("data/healthcare_personnel_salary.tsv")
 
 ## Mean annual population
 
-**mean_annual_population.csv**: PO0211 MEAN ANNUAL POPULATION by Sex, Year and Age group dataset is from [Statistics Estonia database](http://pub.stat.ee/px-web.2001/Dialog/varval.asp?ma=PO0211&ti=MEAN+ANNUAL+POPULATION+BY+SEX+AND+AGE+GROUP&path=../I_Databas/Population/01Population_indicators_and_composition/04Population_figure_and_composition/&lang=1)
-Mean annual population – half the sum number of the population at the beginning and at the end of the year.
+**mean_annual_population.csv**: PO0211 MEAN ANNUAL POPULATION by Sex, Year and Age group dataset is from [Statistics Estonia database](http://pub.stat.ee/px-web.2001/Dialog/varval.asp?ma=PO0211&ti=MEAN+ANNUAL+POPULATION+BY+SEX+AND+AGE+GROUP&path=../I_Databas/Population/01Population_indicators_and_composition/04Population_figure_and_composition/&lang=1).
+
+Mean annual population is defined Statistics Estonia as half the sum number of the population at the beginning and at the end of the year.
 
 **Download this file**:
 ```
