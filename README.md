@@ -123,6 +123,8 @@ pop <- read_csv("data/mean_annual_population.csv")
 ```
 
 ## Transactions with residential apartments
+The source of this dataset is Estonian Land Board transactions database: http://www.maaamet.ee/kinnisvara/htraru/FilterUI.aspx. 
+Dataset was downloaded and processed using 'R/maaamet.R' script.
 
 Download this file to your projects data folder.
 ```
@@ -133,7 +135,7 @@ download.file(url, "data/transactions_residential_apartments.csv")
 
 ```
 library(readr)
-pop <- read_csv("data/transactions_residential_apartments.csv")
+apartments <- read_csv("data/transactions_residential_apartments.csv")
 ```
 
 
