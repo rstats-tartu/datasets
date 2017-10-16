@@ -110,6 +110,7 @@ salary <- read_tsv("data/healthcare_personnel_salary.tsv")
 Mean annual population is defined by Statistics Estonia as half the sum number of the population at the beginning and at the end of the year.
 
 **Download this file**:
+
 ```
 url <- "https://raw.githubusercontent.com/rstats-tartu/datasets/master/mean_annual_population.csv"
 dir.create("data")
@@ -119,6 +120,20 @@ download.file(url, "data/mean_annual_population.csv")
 ```
 library(readr)
 pop <- read_csv("data/mean_annual_population.csv")
+```
+
+## Transactions with residential apartments
+
+Download this file to your projects data folder.
+```
+url <- ""
+dir.create("data")
+download.file(url, "data/transactions_residential_apartments.csv")
+```
+
+```
+library(readr)
+pop <- read_csv("data/transactions_residential_apartments.csv")
 ```
 
 

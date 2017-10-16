@@ -84,3 +84,6 @@ newcolnames <- c("year", "month", "county", "area", "transactions",
                  "price_unit_area_sd", "title", "subtitle")
 colnames(res_ap) <- newcolnames
 write_csv(res_ap, "transactions_residential_apartments.csv")
+## Test file for import
+# test <- read_csv("transactions_residential_apartments.csv")
+# test
