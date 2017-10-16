@@ -133,7 +133,7 @@ download.file(url, "data/transactions_residential_apartments.csv")
 
 ```
 library(readr)
-pop <- read_csv("data/transactions_residential_apartments.csv")
+apartments <- read_csv("data/transactions_residential_apartments.csv")
 ```
 
 
