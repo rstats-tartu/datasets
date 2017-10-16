@@ -126,7 +126,7 @@ pop <- read_csv("data/mean_annual_population.csv")
 
 Download this file to your projects data folder.
 ```
-url <- ""
+url <- "https://raw.githubusercontent.com/rstats-tartu/datasets/master/transactions_residential_apartments.csv"
 dir.create("data")
 download.file(url, "data/transactions_residential_apartments.csv")
 ```
