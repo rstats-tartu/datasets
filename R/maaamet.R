@@ -61,6 +61,11 @@ algus <- seq(dmy('01-01-2015'), dmy('01-12-2016'), by = '1 month')
 lopp <- ceiling_date(algus, "month") - days(1)
 residential_apartments_1516 <- data_frame(algus, lopp) %>% pull_maaamet()
 
+# 2017
+algus <- seq(dmy('01-01-2017'), dmy('01-10-2017'), by = '1 month')
+lopp <- ceiling_date(algus, "month") - days(1)
+residential_apartments_17 <- data_frame(algus, lopp) %>% pull_maaamet()
+
 residential_apartments <- ls()[str_detect(ls(), "resid")] %>% 
   lapply(get) %>% 
   bind_rows()
@@ -83,6 +88,7 @@ newcolnames <- c("year", "month", "county", "area", "transactions",
                  "price_unit_area_median", "price_unit_area_mean", 
                  "price_unit_area_sd", "title", "subtitle")
 colnames(res_ap) <- newcolnames
+
 write_csv(res_ap, "transactions_residential_apartments.csv")
 ## Test file for import
 # test <- read_csv("transactions_residential_apartments.csv")
