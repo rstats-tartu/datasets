@@ -93,3 +93,6 @@ write_csv(res_ap, "transactions_residential_apartments.csv")
 ## Test file for import
 # test <- read_csv("transactions_residential_apartments.csv")
 # test
+# 
+library(foreign)
+consumer_index <- read.dbf("XO02320171017484539.dbf")
