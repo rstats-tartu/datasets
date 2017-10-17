@@ -93,6 +93,9 @@ write_csv(res_ap, "transactions_residential_apartments.csv")
 ## Test file for import
 # test <- read_csv("transactions_residential_apartments.csv")
 # test
-# 
+# Import consumer index data
 library(foreign)
-consumer_index <- read.dbf("XO02320171017484539.dbf")
+consumer_index <- read.dbf("rawdata/XO02320171017484539.dbf")
+colnames(consumer_index) <- c("total", "year", month.abb)
+consumer_index <- consumer_index[,-1]
+write.csv(consumer_index, "consumer_index.csv")
