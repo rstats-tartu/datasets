@@ -1,6 +1,7 @@
 # Datasets
 
-This repo contains datasets that we use in our demos.
+## Estonian statistics databases
+Course aims to use datasets published in **Estonian Health Research and Statistics** (TAI) database and also datasets in Statistics Estonia database. [TAI datasets](http://pxweb.tai.ee/PXWeb2015/index_en.html) can be conveniently accessed using boulder package https://tpall.github.io/boulder/. Statistics Estonia data can be downloaded from their [website](http://andmebaas.stat.ee/?lang=et) or accessed using API.
 
 ## Downloading files from datasets repository
 
