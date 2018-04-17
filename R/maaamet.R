@@ -108,7 +108,8 @@ res <- transactions %>%
   mutate(result = map(resp, "result")) %>% 
   pull(result)
 
-res[[160]] %>% rvest::html_text()
+
+get_maaamet_tab(res[[160]], ehak = ehak)
 
 # end alt download --------------------------------------------------------
 
