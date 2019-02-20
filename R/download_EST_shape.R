@@ -8,5 +8,6 @@ library(here)
 #+
 url <- "https://biogeo.ucdavis.edu/data/gadm3.6/Rsp/gadm36_EST_0_sp.rds"
 
-#' Fetch file to data folder.
-download.file(url = url, destfile = here("data", basename(url)))
+#' Fetch file to data folder, must use binary mode "wb".
+path <- here("data", basename(url))
+download.file(url = url, destfile = path, mode = "wb")
