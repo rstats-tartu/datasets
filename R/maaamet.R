@@ -32,6 +32,11 @@ pull_maaamet <- . %>%
          resp = map(url, ~ {message(str_trunc(.x, 80, "center")); try(read_html(.x))}))
 
 
+
+# Alt pull_maaamet --------------------------------------------------------
+
+
+
 # Download data in smaller splits  ----------------------------------------
 
 # 2005-6
@@ -62,15 +67,59 @@ lopp <- ceiling_date(algus, "month") - days(1)
 residential_apartments_1516 <- data_frame(algus, lopp) %>% pull_maaamet()
 
 # 2017
-algus <- seq(dmy('01-01-2017'), dmy('01-10-2017'), by = '1 month')
+algus <- seq(dmy('01-01-2017'), dmy('01-12-2018'), by = '1 month')
 lopp <- ceiling_date(algus, "month") - days(1)
 residential_apartments_17 <- data_frame(algus, lopp) %>% pull_maaamet()
+
+
+# alt download ------------------------------------------------------------
+
+#' T13 Korteriomandi (eluruumide) tehingud
+aru <- "T13"
+#' ehak (Eesti haldus- ja asustusjaotuse klassifikaator) - piirkonna kood
+#' EEMK Kõik maakonnad
+ehak <- "EEMK"
+start <- dmy('01-01-2005')
+end <- dmy('01-12-2006')
+
+maaamet_url <- function(start, end, by = '1 month', type = "T13", municip = "EEMK") {
+  start <- seq(start, end, by = by)
+  end <- lubridate::ceiling_date(start, "month") - days(1)
+  
+  baseurl <- "http://www.maaamet.ee/kinnisvara/htraru/Start.aspx?aru=%s&ehak=%s&algus=%s&lopp=%s"
+  
+  data_frame(start, end) %>%
+  mutate(start_date = format(start, "%d.%m.%Y"),
+         end_date = format(end, "%d.%m.%Y"),
+    url = map2_chr(start_date, end_date, ~ sprintf(baseurl, type, municip, .x, .y))) %>% 
+    select(start_month = start, end_month = end, url)
+}
+
+periods <- data_frame(start = seq(dmy('01-01-2005'), dmy('01-01-2018'), by = '2 years'),
+           end = seq(dmy('01-12-2006'), dmy('01-12-2018'), by = '2 years'))
+periods <- periods %>% 
+  mutate(resp = map2(start, end, maaamet_url)) %>% 
+  unnest()
+
+safe_read_html <- safely(read_html)
+transactions <- periods %>% 
+  mutate(resp = map(url, ~ {message(str_trunc(.x, 80, "center")); safe_read_html(.x)}))
+res <- transactions %>% 
+  mutate(result = map(resp, "result")) %>% 
+  pull(result)
+
+
+get_maaamet_tab(res[[160]], ehak = ehak)
+
+# end alt download --------------------------------------------------------
+
+
 
 residential_apartments <- ls()[str_detect(ls(), "resid")] %>% 
   lapply(get) %>% 
   bind_rows()
 
-devtools::source_gist("https://gist.github.com/tpall/ac0dad53d90112a82e9129f0ac028142")
+devtools::source_gist("https://gist.github.com/tpall/ac0dad53d90112a82e9129f0ac028142", filename = "get_maaamet_tab.R")
 
 residential_apartments <- residential_apartments %>% 
   mutate(tab = map(resp, get_maaamet_tab, ehak = ehak))
